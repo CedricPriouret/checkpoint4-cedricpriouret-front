@@ -60,7 +60,15 @@ function Users() {
             setMail(event.target.value);
           }}
         />
-        <button onClick={addUser}>Ajouter un utilisateur</button>
+        <button type="button" className="btn-user" onClick={addUser}>
+          Ajouter un utilisateur
+        </button>
+      </div>
+      <div className="show-users">
+        <hr />
+        <button type="button" className="btn-user">
+          Voir les utilisateurs
+        </button>
       </div>
     </div>
   );

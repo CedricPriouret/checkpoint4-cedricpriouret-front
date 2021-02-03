@@ -24,12 +24,22 @@
   padding-left: 5px;
 }
 
-.information button {
+.btn-user {
   width: 150px;
   height: 40px;
   margin: 30px;
 }
 
-.information button:hover {
+.btn-user:hover {
   cursor: pointer;
+}
+
+hr {
+  width: 50%;
+}
+
+.show-users {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
