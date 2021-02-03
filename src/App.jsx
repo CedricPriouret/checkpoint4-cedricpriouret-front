@@ -4,6 +4,7 @@ import "./normalize.css";
 // import Header from "./components/Home/Header";
 import Navbar from "./components/Home/Navbar";
 import Main from "./components/Home/Main";
+import Users from "./components/Manage/Users";
 // import Footer from "./components/Home/Footer";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       {/* <Header /> */}
       <Navbar />
       <Main />
+      <Users />
       {/* <Footer /> */}
     </div>
   );

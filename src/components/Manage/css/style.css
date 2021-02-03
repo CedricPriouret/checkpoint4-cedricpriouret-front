@@ -1,0 +1,35 @@
+.container-user {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.information label {
+  text-align: left;
+}
+
+.information input {
+  width: 300px;
+  height: 35px;
+  margin: 10px;
+  padding-left: 5px;
+}
+
+.information button {
+  width: 150px;
+  height: 40px;
+  margin: 30px;
+}
+
+.information button:hover {
+  cursor: pointer;
+}
