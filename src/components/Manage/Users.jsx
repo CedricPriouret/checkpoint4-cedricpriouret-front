@@ -70,6 +70,18 @@ function Users() {
       });
   };
 
+  /* SUPPRIMER UN UTILISATEUR */
+
+  const deleteUser = (id) => {
+    axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
+      setUserList(
+        userList.filter((val) => {
+          return val.id !== id;
+        })
+      );
+    });
+  };
+
   return (
     <div className="container-user">
       <div className="information">
@@ -142,7 +154,13 @@ function Users() {
                 >
                   Valider
                 </button>
-                <button>Supprimer l'utilisateur</button>
+                <button
+                  onClick={() => {
+                    deleteUser(val.id);
+                  }}
+                >
+                  Supprimer l'utilisateur
+                </button>
               </div>
             </div>
           );
