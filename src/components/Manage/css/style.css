@@ -1,0 +1,58 @@
+.container-user {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.information label {
+  text-align: left;
+}
+
+.information input {
+  width: 300px;
+  height: 35px;
+  margin: 10px;
+  padding-left: 5px;
+}
+
+.btn-user {
+  width: 150px;
+  height: 40px;
+  margin: 30px;
+}
+
+.btn-user:hover {
+  cursor: pointer;
+}
+
+hr {
+  width: 50%;
+}
+
+.show-users {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-list-user {
+  width: 40%;
+  height: auto;
+  border: 1px solid #f2f2f2;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+}
+
+.container-list-user h3 {
+  margin: 20px;
+}
