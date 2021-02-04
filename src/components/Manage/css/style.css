@@ -44,7 +44,7 @@ hr {
   flex-direction: column;
 }
 
-.list-user {
+.container-list-user {
   width: 40%;
   height: auto;
   border: 1px solid #f2f2f2;
@@ -53,6 +53,6 @@ hr {
   display: flex;
 }
 
-.list-user h3 {
+.container-list-user h3 {
   margin: 20px;
 }

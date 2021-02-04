@@ -10,6 +10,8 @@ function Users() {
   const [country, setCountry] = useState("");
   const [mail, setMail] = useState("");
 
+  const [newCountry, setNewCountry] = useState("");
+
   const [userList, setUserList] = useState([]);
 
   /* AJOUTER UN UTILISATEUR */
@@ -43,6 +45,29 @@ function Users() {
     axios.get("http://localhost:3001/user").then((response) => {
       setUserList(response.data);
     });
+  };
+
+  /* METTRE A JOUR LA REGION D'UN UTILISATEUR */
+
+  const updateCountryUser = (id) => {
+    axios
+      .put("http://localhost:3001/update", { country: newCountry, id: id })
+      .then((response) => {
+        setUserList(
+          userList.map((val) => {
+            return val.id === id
+              ? {
+                  id: val.id,
+                  firstname: val.firstname,
+                  lastname: val.lastname,
+                  age: val.age,
+                  country: newCountry,
+                  mail: val.mail,
+                }
+              : val;
+          })
+        );
+      });
   };
 
   return (
@@ -94,12 +119,31 @@ function Users() {
         </button>
         {userList.map((val, key) => {
           return (
-            <div className="list-user">
-              <h3>Nom: {val.firstname}</h3>
-              <h3>Prénom: {val.lastname}</h3>
-              <h3>Age: {val.age}</h3>
-              <h3>Région: {val.country}</h3>
-              <h3>Mail: {val.mail}</h3>
+            <div className="container-list-user">
+              <div className="list-user">
+                <h3>Nom: {val.firstname}</h3>
+                <h3>Prénom: {val.lastname}</h3>
+                <h3>Age: {val.age}</h3>
+                <h3>Région: {val.country}</h3>
+                <h3>Mail: {val.mail}</h3>
+              </div>
+              <div className="update-delete-user">
+                <input
+                  type="text"
+                  placeholder="Autre region..."
+                  onChange={(event) => {
+                    setNewCountry(event.target.value);
+                  }}
+                />
+                <button
+                  onClick={() => {
+                    updateCountryUser(val.id);
+                  }}
+                >
+                  Valider
+                </button>
+                <button>Supprimer l'utilisateur</button>
+              </div>
             </div>
           );
         })}
