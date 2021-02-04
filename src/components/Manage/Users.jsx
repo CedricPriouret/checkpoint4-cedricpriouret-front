@@ -10,6 +10,10 @@ function Users() {
   const [country, setCountry] = useState("");
   const [mail, setMail] = useState("");
 
+  const [userList, setUserList] = useState([]);
+
+  /* AJOUTER UN UTILISATEUR */
+
   const addUser = () => {
     axios
       .post("http://localhost:3001/create", {
@@ -19,7 +23,26 @@ function Users() {
         country: country,
         mail: mail,
       })
-      .then(() => console.log("success"));
+      .then(() => {
+        setUserList([
+          ...userList,
+          {
+            firstname: firstname,
+            lastname: lastname,
+            age: age,
+            country: country,
+            mail: mail,
+          },
+        ]);
+      });
+  };
+
+  /* OBTENIR LA LISTE DES UTILISATEURS */
+
+  const getUser = () => {
+    axios.get("http://localhost:3001/user").then((response) => {
+      setUserList(response.data);
+    });
   };
 
   return (
@@ -66,9 +89,20 @@ function Users() {
       </div>
       <div className="show-users">
         <hr />
-        <button type="button" className="btn-user">
+        <button type="button" className="btn-user" onClick={getUser}>
           Voir les utilisateurs
         </button>
+        {userList.map((val, key) => {
+          return (
+            <div className="list-user">
+              <h3>Nom: {val.firstname}</h3>
+              <h3>Prénom: {val.lastname}</h3>
+              <h3>Age: {val.age}</h3>
+              <h3>Région: {val.country}</h3>
+              <h3>Mail: {val.mail}</h3>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
