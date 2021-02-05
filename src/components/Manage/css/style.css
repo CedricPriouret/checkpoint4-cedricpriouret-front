@@ -1,16 +1,30 @@
-.container-user {
+.container-create-user {
   margin: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.container-create-user h2 {
+  color: #150941;
+  text-align: center;
+  font-size: xx-large;
+}
+
+.container-create-user label {
+  color: #150941;
 }
 
 .information {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  justify-content: center;
   align-items: center;
+  background-color: #f2f2f2;
+  width: 50%;
+  margin: 30px;
+  padding: 30px;
+  border-radius: 0.5%;
 }
 
 .information label {
@@ -28,10 +42,29 @@
   width: 150px;
   height: 40px;
   margin: 30px;
+  box-shadow: inset 0px 1px 0px 0px #f8003e;
+  background: linear-gradient(to bottom, #f2f2f2 5%, #d1d1d1 100%);
+  background-color: #f2f2f2;
+  border-radius: 3px;
+  border: 1px solid #f8003e;
+  display: inline-block;
+  cursor: pointer;
+  color: #f8003e;
+  font-size: 13px;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #f8003e;
 }
 
 .btn-user:hover {
   cursor: pointer;
+  background: linear-gradient(to bottom, #d1d1d1 5%, #f2f2f2 100%);
+  background-color: #d1d1d1;
+}
+
+.btn-user:active {
+  position: relative;
+  top: 1px;
 }
 
 hr {
@@ -44,13 +77,23 @@ hr {
   flex-direction: column;
 }
 
-.container-list-user {
-  width: 40%;
-  height: auto;
-  border: 1px solid #f2f2f2;
-  margin: 10px;
-  padding: 10px;
+.container-user {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 0.5%;
+  margin: 30px;
+}
+
+.container-list-user {
+  display: flex;
+  width: 70%;
+  height: auto;
+  color: #150941;
+  border-bottom: 1px solid #f8003e;
+  margin: 10px;
 }
 
 .container-list-user h3 {

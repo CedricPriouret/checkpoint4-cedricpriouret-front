@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./components/Home/css/style.css";
 import "./normalize.css";
 // import Header from "./components/Home/Header";
@@ -12,9 +13,13 @@ function App() {
     <div className="App">
       {/* <Header /> */}
       <Navbar />
-      <Main />
-      <Users />
       {/* <Footer /> */}
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Main} />
+          <Route exact path="/users" component={Users} />
+        </Switch>
+      </Router>
     </div>
   );
 }

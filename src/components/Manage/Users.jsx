@@ -83,7 +83,9 @@ function Users() {
   };
 
   return (
-    <div className="container-user">
+    <div className="container-create-user">
+      <h2>Ajouter un utilisateur</h2>
+      <hr />
       <div className="information">
         <label>Nom:</label>
         <input
@@ -124,47 +126,50 @@ function Users() {
           Ajouter un utilisateur
         </button>
       </div>
+      <hr />
       <div className="show-users">
-        <hr />
-        <button type="button" className="btn-user" onClick={getUser}>
-          Voir les utilisateurs
-        </button>
-        {userList.map((val, key) => {
-          return (
-            <div className="container-list-user">
-              <div className="list-user">
-                <h3>Nom: {val.firstname}</h3>
-                <h3>Prénom: {val.lastname}</h3>
-                <h3>Age: {val.age}</h3>
-                <h3>Région: {val.country}</h3>
-                <h3>Mail: {val.mail}</h3>
+        <h2>Liste des utilisateurs</h2>
+        <div className="container-user">
+          <button type="button" className="btn-user" onClick={getUser}>
+            Voir les utilisateurs
+          </button>
+          {userList.map((val, key) => {
+            return (
+              <div className="container-list-user">
+                <div className="list-user">
+                  <h3>Nom: {val.firstname}</h3>
+                  <h3>Prénom: {val.lastname}</h3>
+                  <h3>Age: {val.age}</h3>
+                  <h3>Région: {val.country}</h3>
+                  <h3>Mail: {val.mail}</h3>
+                </div>
+                <div className="update-delete-user">
+                  <input
+                    type="text"
+                    placeholder="Autre region..."
+                    onChange={(event) => {
+                      setNewCountry(event.target.value);
+                    }}
+                  />
+                  <button
+                    onClick={() => {
+                      updateCountryUser(val.id);
+                    }}
+                  >
+                    Valider
+                  </button>
+                  <button
+                    onClick={() => {
+                      deleteUser(val.id);
+                    }}
+                  >
+                    Supprimer l'utilisateur
+                  </button>
+                </div>
               </div>
-              <div className="update-delete-user">
-                <input
-                  type="text"
-                  placeholder="Autre region..."
-                  onChange={(event) => {
-                    setNewCountry(event.target.value);
-                  }}
-                />
-                <button
-                  onClick={() => {
-                    updateCountryUser(val.id);
-                  }}
-                >
-                  Valider
-                </button>
-                <button
-                  onClick={() => {
-                    deleteUser(val.id);
-                  }}
-                >
-                  Supprimer l'utilisateur
-                </button>
-              </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </div>
   );
