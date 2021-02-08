@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from "react";
 import profile from "./img/profile.png";
 
 function Main() {
