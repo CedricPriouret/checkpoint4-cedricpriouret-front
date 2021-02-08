@@ -86,36 +86,41 @@ function Users() {
       <h2>Ajouter un utilisateur</h2>
       <hr />
       <div className="information">
-        <label>Nom:</label>
+        <label htmlFor="Nom">Nom:</label>
         <input
+          id="Nom"
           type="text"
           onChange={(event) => {
             setFirstname(event.target.value);
           }}
         />
-        <label>Prénom:</label>
+        <label htmlFor="Prénom">Prénom:</label>
         <input
+          id="Prénom"
           type="text"
           onChange={(event) => {
             setLastname(event.target.value);
           }}
         />
-        <label>Age:</label>
+        <label htmlFor="Age">Age:</label>
         <input
+          id="Age"
           type="number"
           onChange={(event) => {
             setAge(event.target.value);
           }}
         />
-        <label>Région:</label>
+        <label htmlFor="Région">Région:</label>
         <input
+          id="Région"
           type="text"
           onChange={(event) => {
             setCountry(event.target.value);
           }}
         />
-        <label>Mail:</label>
+        <label htmlFor="Mail">Mail:</label>
         <input
+          id="Mail"
           type="email"
           onChange={(event) => {
             setMail(event.target.value);
